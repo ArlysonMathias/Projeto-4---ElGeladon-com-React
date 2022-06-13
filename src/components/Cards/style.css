@@ -1,0 +1,105 @@
+.card-container {
+  width: 200px;
+  height: 325px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container-div1 {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  justify-content: center;
+}
+
+.card-container-div1 p {
+  color: darkviolet;
+  font-weight: 300;
+  margin-top: 20px;
+}
+.card-container-div1 img {
+  width: 60px;
+  height: 100px;
+}
+.card-container h3 {
+  font-size: 1.1rem;
+  color: blueviolet;
+  width: 100%;
+  height: 20px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-container p {
+  font-size: medium;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 20px;
+}
+
+.button-add {
+  position: static;
+  padding: 10px;
+  background-color: blueviolet;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  bottom: 0;
+}
+
+.button-add:hover {
+  background-color: white;
+  color: blueviolet;
+}
+
+.card-container-buttons{
+  height: 80px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container-buttons a{
+  text-decoration: none;
+  background-color: #fff;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-container-buttons i{
+  
+}
+
+.icon-edit{
+  margin-right: 5px;
+  color: blueviolet;
+
+}
+
+.icon-remove{
+  color: blueviolet;
+}
+
+.icon-edit:hover,.icon-remove:hover{
+  background-color: blueviolet;
+  color: #fff;
+  transition: .3s ease-in-out;
+}
+
+
