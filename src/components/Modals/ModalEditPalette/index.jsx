@@ -2,6 +2,7 @@ import "./style.css";
 import { GrClose } from "react-icons/gr";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
+import api from "services";
 
 const ModalEditPalette = ({ closeModal, palette, getPalettes }) => {
   const [sabor, setSabor] = useState(palette.sabor);
@@ -17,27 +18,21 @@ const ModalEditPalette = ({ closeModal, palette, getPalettes }) => {
       foto,
     };
 
-    const response = await fetch(
-      `http://localhost:8080/paletas/atualizar-paleta/${palette._id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "cors",
-        body: JSON.stringify(editedPalette),
-      }
+    const response = await api.put(
+      `/paletas/atualizar-paleta/${palette._id}`,
+      editedPalette
     );
 
     if (response.status !== 201) {
       return toast.error("Erro ao editar paleta.");
     }
 
-    toast.success("Paleta editada com sucesso!")
+    toast.success("Paleta editada com sucesso!");
 
     closeModal();
     getPalettes();
   };
+
   return (
     <div className="modal-overlay">
       <div className="modal-edit-container">

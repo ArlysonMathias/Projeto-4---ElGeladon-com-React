@@ -2,6 +2,7 @@ import "./style.css";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { GrClose } from "react-icons/gr";
+import api from "services";
 
 const ModalNewPalette = ({ closeModal, getPalettes }) => {
   const [sabor, setSabor] = useState("");
@@ -16,15 +17,7 @@ const ModalNewPalette = ({ closeModal, getPalettes }) => {
       descricao,
       foto,
     };
-
-    const response = await fetch("http://localhost:8080/paletas/criar-paleta", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      mode: "cors",
-      body: JSON.stringify(newPalette),
-    });
+    const response = await api.post("/paletas/criar-paleta", newPalette);
 
     if (response.status !== 201) {
       return toast.error("Erro na criação!");

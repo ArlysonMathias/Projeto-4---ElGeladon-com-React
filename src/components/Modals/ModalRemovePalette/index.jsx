@@ -1,16 +1,11 @@
 import "./style.css";
 import { GrClose } from "react-icons/gr";
 import { toast } from "react-hot-toast";
+import api from "services";
 
 const ModalRemovePalette = ({ closeModal, palette, getPalettes }) => {
   const handleRemovePalette = async () => {
-    const response = await fetch(
-      `http://localhost:8080/paletas/deletar-paleta/${palette._id}`,
-      {
-        method: "DELETE",
-        mode: "cors",
-      }
-    );
+    const response = await api.delete(`/paletas/deletar-paleta/${palette._id}`);
 
     if (response.status !== 200) {
       return toast.error("Erro ao deletar paleta.");

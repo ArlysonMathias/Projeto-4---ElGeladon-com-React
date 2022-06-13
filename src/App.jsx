@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import { Toaster } from "react-hot-toast";
 import { useState, useEffect } from "react";
+import api from "services";
 
 
 
@@ -12,10 +13,10 @@ const App = () => {
   const [palletes, setPalette] = useState([]);
 
   const getPalettes = async () => {
-    const response = await fetch("http://localhost:8080/paletas/listar-todas");
-    const palettesList = await response.json();
+    const response = await api.get("/paletas/listar-todas");
+    
 
-    setPalette(palettesList);
+     setPalette(response.data);
   };
 
   useEffect(() => {
