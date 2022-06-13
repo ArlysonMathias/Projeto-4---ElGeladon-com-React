@@ -1,5 +1,5 @@
 # Projeto El-Geladon com React
-Projeto 43 do 3º Módulo curso FullStack - BlueEdtech
+Projeto 4 do 3º Módulo curso FullStack - BlueEdtech
 
 ## Descrição
 
